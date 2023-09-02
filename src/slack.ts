@@ -11,8 +11,9 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 			// 	statusCode: 200,
 			// 	body: 'Witaj w Hedgehug! Aby rozpocząć wybierz opcję z menu poniżej.',
 			// };
-			const response = await salesforceApi();
-			return response;
+			//const response = await salesforceApi();
+			//return response;
+			return 'it is ok';
 
 		case '/materialyszkoleniowe':
 			return {
