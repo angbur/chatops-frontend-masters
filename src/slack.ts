@@ -5,7 +5,7 @@ import { blocks, modal, slackApi, verifySlackRequest } from './util/slack';
 
 async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 	switch (payload.command) {
-		case '/foodfight':
+		case '/faq':
 			const response = await slackApi(
 				'views.open',
 				modal({
