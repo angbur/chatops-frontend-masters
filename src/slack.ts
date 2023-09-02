@@ -1,19 +1,28 @@
 import type { Handler } from '@netlify/functions';
 import { parse } from 'querystring';
-import { verifySlackRequest } from './util/slack';
+import { slackApi, verifySlackRequest } from './util/slack';
 
 async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 	switch (payload.command) {
 		case '/hedgehug':
+			const response = await slackApi(
+				'chat.postMessage',
+				{
+				channel: payload.channel_id,
+				text:
+					'Witaj w Hedgehug! Aby rozpocząć wybierz opcję z menu poniżej.\n\n' +
+					'*Available Commands:*\n' +
+					'• `/hedgehug` - Display this help message :information_source:\n' +
+					'• `/materialyszkoleniowe` - Link to training materials :book:\n' +
+					'• `/wolnedyzury` - List available shifts :calendar:\n' +
+					'• Add more commands here... :rocket:',
+				}
+			);
 			return {
 				statusCode: 200,
-				body: 'Witaj w Hedgehug! Aby rozpocząć wybierz opcję z menu poniżej.\n\n' +
-				'*Available Commands:*\n' +
-				'• `/hedgehug` - Display this help message :information_source:\n' +
-				'• `/materialyszkoleniowe` - Link to training materials :book:\n' +
-				'• `/wolnedyzury` - List available shifts :calendar:\n' +
-				'• Add more commands here... :rocket:',
+				body: JSON.stringify(response),
 			};
+
 		case '/materialyszkoleniowe':
 			return {
 				statusCode: 200,
@@ -106,6 +115,6 @@ const FAQData = [
 	  },
 	}));
   
-	return  blocks.section(blocks);
+	return  
   }
   
