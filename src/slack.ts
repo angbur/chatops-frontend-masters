@@ -9,10 +9,10 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 			return {
 				statusCode: 200,
 				body: 'Witaj w Hedgehug! Aby rozpocząć wybierz opcję z menu poniżej.\n\n' +
-					'Available Commands:\n' +
-					'/hedgehug - Display this help message\n' +
-					'/materialyszkoleniowe - Link to training materials\n' +
-					'Add more commands here...',
+					'*Available Commands:*\n' +
+					'• `/hedgehug` - Display this help message :information_source:\n' +
+					'• `/materialyszkoleniowe` - Link to training materials :book:\n' +
+					'• Add more commands here... :rocket:',
 			};
 		case '/materialyszkoleniowe':
 			return {
