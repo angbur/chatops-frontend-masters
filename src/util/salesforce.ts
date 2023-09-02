@@ -9,8 +9,7 @@ export const salesforceApi = () => {
 	const res = fetch (`${process.env.TOKEN_URL}`, {
 		method: 'POST',
 		headers: {
-			'accept': 'application/json',
-			'content-type': 'application/x-www-form-urlencoded',
+			'content-type': 'application/json',
 			'Access-Control-Allow-Origin': '*',
 			},
 		body: new URLSearchParams(token_data),
