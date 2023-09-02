@@ -106,8 +106,5 @@ const FAQData = [
 	  },
 	}));
   
-	return {
-	  text: 'Oto lista często zadawanych pytań:',
-	  blocks,
-	};
+	return blocks;
   }
