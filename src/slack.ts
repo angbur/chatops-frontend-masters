@@ -30,7 +30,7 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 		case '/faq':
 			return {
 				statusCode: 200,
-				body: `${generateFAQMessage()}`
+				body: JSON.stringify(generateFAQMessage()),
 			};
 		default:
 			return {
