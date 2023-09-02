@@ -60,7 +60,6 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 					],
 				}),
 			);
-
 			if (!response.ok) {
 				console.log(response);
 			}
