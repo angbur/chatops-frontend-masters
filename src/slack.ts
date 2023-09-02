@@ -2,7 +2,7 @@ import type { Handler } from '@netlify/functions';
 
 import { parse } from 'querystring';
 import { blocks, modal, slackApi, verifySlackRequest } from './util/slack';
-import { saveItem } from './util/notion';
+import { saveItem } from './util/salesforce';
 
 async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 	switch (payload.command) {

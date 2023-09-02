@@ -1,5 +1,5 @@
 import { type Handler, schedule } from '@netlify/functions';
-import { getNewItems } from './util/notion';
+import { getNewItems } from './util/salesforce';
 import { blocks, slackApi } from './util/slack';
 
 const postNewNotionItemsToSlack: Handler = async () => {
