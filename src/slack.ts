@@ -106,8 +106,13 @@ const FAQData = [
 	  },
 	}));
   
-	return {
+	const slackMessage = {
 	  text: 'Oto lista często zadawanych pytań:',
 	  blocks,
+	};
+  
+	return {
+	  statusCode: 200,
+	  body: JSON.stringify(slackMessage),
 	};
   }
