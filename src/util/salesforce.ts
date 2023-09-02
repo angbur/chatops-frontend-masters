@@ -11,7 +11,9 @@ export const salesforceApi = () => {
 			method: 'POST',
 			body: JSON.stringify(new URLSearchParams(token_data)),
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				'Access-Control-Allow-Origin': '*',
+				'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
 			}
 		})
 		.then(response => response.json())
