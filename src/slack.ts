@@ -27,7 +27,7 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				
 				}),
 			};
-		case '/FAQ':
+		case '/faq':
 			return {
 				statusCode: 200,
 				body: generateFAQMessage()
