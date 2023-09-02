@@ -30,7 +30,7 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 		case '/faq':
 			return {
 				statusCode: 200,
-				body: generateFAQMessage()
+				body: `${generateFAQMessage()}`
 			};
 		default:
 			return {
@@ -106,13 +106,8 @@ const FAQData = [
 	  },
 	}));
   
-	const slackMessage = {
+	return {
 	  text: 'Oto lista często zadawanych pytań:',
 	  blocks,
-	};
-  
-	return {
-	  statusCode: 200,
-	  body: JSON.stringify(slackMessage),
 	};
   }
