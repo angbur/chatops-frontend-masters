@@ -28,10 +28,10 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				
 				}),
 			};
-		case '/faq':
-			//return {
-				//statusCode: 200,
-				/* body: 'Witaj w Hedgehug FAQ! Oto najczęściej zadawane pytania i odpowiedzi na nie:\n\n' +
+		/* case '/faq':
+			return {
+				statusCode: 200,
+				* body: 'Witaj w Hedgehug FAQ! Oto najczęściej zadawane pytania i odpowiedzi na nie:\n\n' +
 				'📚 *Pytanie: Jak Wygląda Interwencja?*\n' +
 				'Odpowiedź: Interwencje polegają na reagowaniu na sytuacje zagrożenia dla zwierząt, takie jak przypadki znęcania się czy wypadki drogowe. Wolontariusze dostają specjalne szkolenie, które pomaga im działać w takich sytuacjach. Interwencje mogą być emocjonalnie trudne, ale nasza wspólna praca przynosi zwierzętom pomoc i nadzieję. :animal_rescue:\n\n' +
 				'🚀 *Pytanie: Jak Się Przygotować do Interwencji?*\n' +
@@ -40,9 +40,9 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				'Odpowiedź: Sytuacje interwencyjne mogą być różnorodne i nieprzewidywalne. Możemy napotkać na zwierzęta w stanie krytycznym, konieczność działań ratunkowych, a także sytuacje wymagające interakcji z innymi ludźmi. Nasze doświadczenie i szkolenie pomaga nam efektywnie radzić sobie w różnych sytuacjach. :warning:\n\n' +
 				'🤔 *Pytanie: Czy Wolontariat Jest Trudny?*\n' +
 				'Odpowiedź: Wolontariat w organizacji Hedgehug może być emocjonalnie trudny ze względu na trudne sytuacje, z jakimi stykamy się podczas interwencji. Jednak nasza wspólna praca przynosi ogromną satysfakcję i pomaga zwierzętom, co jest naszą najważniejszą motywacją. :heart:'
-		   */
+		   
 		  
-			//}
+			}
 			const response = await slackApi('chat.postMessage', {
 				channel: payload.channel_id,
 				text: 'Witaj w Hedgehug FAQ! Oto najczęściej zadawane pytania i odpowiedzi na nie:',
@@ -64,8 +64,8 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				statusCode: 200,
 				body: JSON.stringify(response),
 			};
-
-			case '/foodfight':
+ */
+			case '/faq':
 			const response2 = await slackApi(
 				'views.open',
 				modal({
