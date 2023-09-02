@@ -5,7 +5,7 @@ const token_data = {
 };
 
 export async function salesforceApi() {
-	const res = await fetch(`${process.env.TOKEN_URL}`, {
+	const res = await fetch('https://animalprotectionassociationekostra--ekostraz13.sandbox.my.salesforce.com/services/apexrest/Contact/0037Y00001sS1X0QAK', {
 		method: 'GET',
 		headers: {
 			accept: 'application/json',
