@@ -11,21 +11,9 @@ export const salesforceApi = () => {
 		headers: {
 			'content-type': 'application/json',
 			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
 			},
 		body: new URLSearchParams(token_data),
-		}).then(data => {
-			const token = data.json();
-			return token;
-		
-			/* fetch('https://animalprotectionassociationekostra--ekostraz13.sandbox.my.salesforce.com/services/apexrest/Contact/0037Y00001sS1X0QAK', {
-				method: 'GET',
-				headers: {
-					accept: 'application/json',
-					authorization: `Bearer ${token}`,
-					'content-type': 'application/json',
-				},
-			}) */
-			}
-	);
+		}).then((res) => res.json());
 	return res; 
 }
