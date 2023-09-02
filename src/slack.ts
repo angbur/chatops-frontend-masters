@@ -33,6 +33,7 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				body: {
 					response_type: 'in_channel',
 					blocks: {
+						trigger_id: payload.trigger_id,
 						view: {
 							"type": "section",
 							"text": {
