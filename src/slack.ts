@@ -76,41 +76,6 @@ export const handler: Handler = async (event) => {
 		body: 'TODO: handle Slack commands and interactivity',
 	};
 };
-
-
-const FAQData = '**Q: Jak Wygląda Interwencja?**
-A: Interwencje polegają na reagowaniu na sytuacje zagrożenia dla zwierząt, takie jak przypadki znęcania się czy wypadki drogowe. Wolontariusze dostają specjalne szkolenie, które pomaga im działać w takich sytuacjach. Interwencje mogą być emocjonalnie trudne, ale nasza wspólna praca przynosi zwierzętom pomoc i nadzieję.
-
-**Q: Jak Się Przygotować do Interwencji?**
-A: Przygotowanie obejmuje zapoznanie się z podstawowymi zasadami interwencji, dostępem do odpowiedniego sprzętu, oraz zdobywaniem doświadczenia podczas dyżurów przy zwierzętach. Nasz zespół zawsze wspiera nowych wolontariuszy i pomaga w przygotowaniu do interwencji.
-
-**Q: Co Może Nas Zastać na Miejscu Interwencji?**
-A: Sytuacje interwencyjne mogą być różnorodne i nieprzewidywalne. Możemy napotkać na zwierzęta w stanie krytycznym, konieczność działań ratunkowych, a także sytuacje wymagające interakcji z innymi ludźmi. Nasze doświadczenie i szkolenie pomaga nam efektywnie radzić sobie w różnych sytuacjach.
-
-**Q: Czy Wolontariat Jest Trudny?**
-A: Wolontariat w organizacji Ekostraż może być emocjonalnie trudny ze względu na trudne sytuacje, z jakimi stykamy się podczas interwencji. Jednak nasza wspólna praca przynosi ogromną satysfakcję i pomaga zwierzętom, co jest naszą najważniejszą motywacją.
-';
-
-  function generateFAQMessage() {
-	const blocks = FAQData.map((item, index) => ({
-	  type: 'section',
-	  block_id: `faq_${index}`,
-	  text: {
-		type: 'mrkdwn',
-		text: `*${item.question}*`,
-	  },
-	  accessory: {
-		type: 'button',
-		text: {
-		  type: 'plain_text',
-		  text: 'Pokaż odpowiedź',
-		},
-		action_id: `toggle_answer_${index}`,
-	  },
-	}));
-  
-	return  
-  }
   
   const faqBlocks = [
 	{
