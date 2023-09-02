@@ -2,8 +2,9 @@ import type { Handler } from '@netlify/functions';
 
 import { parse } from 'querystring';
 import { blocks, modal, slackApi, verifySlackRequest } from './util/slack';
-import { saveItem } from './util/salesforce';
 import { fetchApiGET } from './util/test';
+import { salesforceApi, saveItem } from './util/salesforce';
+
 async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 	switch (payload.command) {
 		case '/hedgehug':
@@ -11,7 +12,7 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 			// 	statusCode: 200,
 			// 	body: 'Witaj w Hedgehug! Aby rozpocząć wybierz opcję z menu poniżej.',
 			// };
-			const response = await fetchApiGET();
+			const response = await salesforceApi();
 			return response;
 
 		case '/materialyszkoleniowe':
