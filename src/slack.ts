@@ -102,9 +102,10 @@ const FAQData = [
 		  type: 'plain_text',
 		  text: 'Pokaż odpowiedź',
 		},
-		action_id: `show_answer_${index}`,
+		action_id: `toggle_answer_${index}`,
 	  },
 	}));
   
 	return blocks;
   }
+  
