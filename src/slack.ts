@@ -2,32 +2,39 @@ import type { Handler } from '@netlify/functions';
 import { parse } from 'querystring';
 import { verifySlackRequest } from './util/slack';
 
-// Define a function to handle the '/wolnedyzury' command
 function handleWolneDyzuryCommand() {
-  const shifts = [
-    { date: '2023-09-01', shift: 'Morning Shift' },
-    { date: '2023-09-02', shift: 'Evening Shift' },
-    { date: '2023-09-03', shift: 'Morning Shift' },
-    { date: '2023-09-04', shift: 'Evening Shift' }
-  ];
-
-  const attachmentButtons = shifts.map(shift => ({
-    text: `Assign to ${shift.date}`,
-    type: 'button',
-    action_id: `assign_shift_${shift.date}`,
-  }));
-
-  const attachment = {
-    text: 'Available Shifts for September 2023:',
-    fallback: 'No available shifts.',
-    callback_id: 'assign_shifts',
-    color: '#36a64f', // Green color
-    attachment_type: 'default',
-    actions: attachmentButtons,
-  };
-
-  return attachment;
-}
+	const shifts = [
+	  { date: '2023-09-01', shift: 'Morning Shift' },
+	  { date: '2023-09-02', shift: 'Evening Shift' },
+	  { date: '2023-09-03', shift: 'Morning Shift' },
+	  { date: '2023-09-04', shift: 'Evening Shift' }
+	];
+  
+	const dateList = shifts.map(shift => {
+	  return `${shift.date} - ${shift.shift}`;
+	});
+  
+	const attachmentButtons = shifts.map(shift => ({
+	  text: `Assign to ${shift.date}`,
+	  type: 'button',
+	  action_id: `assign_shift_${shift.date}`,
+	}));
+  
+	const attachment = {
+	  text: 'Available Shifts for September 2023:',
+	  fallback: 'No available shifts.',
+	  callback_id: 'assign_shifts',
+	  color: '#36a64f', // Green color
+	  attachment_type: 'default',
+	  actions: attachmentButtons,
+	};
+  
+	return {
+	  text: `Here are the available shifts for September 2023:\n\n${dateList.join('\n')}`,
+	  attachments: [attachment],
+	};
+  }
+  
 
 async function handleSlashCommand(payload: SlackSlashCommandPayload) {
   switch (payload.command) {
