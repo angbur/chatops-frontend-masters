@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 const token_url = 'https://animalprotectionassociationekostra--ekostraz13.sandbox.my.salesforce.com/services/oauth2/token';
 const client_id = '3MVG9OjW2TAjFKUv3KNCFDmh5FBbbCyLC4dOIooMhGt_WeOiX8shx6n9Izy6fzt0Pp.gJP3ocK00C42ysz55I';
 const client_secret = 'CECC3B760D158E24D32C8A2D8590A71830FC4B1DB0884DBF27A93F6213F048F4';
