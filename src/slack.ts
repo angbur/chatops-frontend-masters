@@ -28,15 +28,10 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				}),
 			};
 		case '/faq':
-			const response = await slackApi(
-				'views.open',
-				'Yeah'
-			);
-			if (!response.ok) {
-				console.log(response);
+			return {
+				statusCode: 200,
+				body: JSON.stringify(payloadBlocks)
 			}
-
-			break;
 		default:
 			return {
 				statusCode: 200,
@@ -200,3 +195,22 @@ const FAQData = [
 		}
 	}
 ];
+
+const payloadBlocks = {
+	blocks: [
+	  {
+		type: 'section',
+		text: {
+		  type: 'mrkdwn',
+		  text: 'Hello there! :wave:'
+		}
+	  },
+	  {
+		type: 'section',
+		text: {
+		  type: 'mrkdwn',
+		  text: 'Here are some important updates:'
+		}
+	  }
+	]
+  };
