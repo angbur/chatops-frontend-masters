@@ -4,9 +4,9 @@ const token_data = {
     client_secret: `${process.env.CLIENT_SECRET}`
 };
 
-export async function salesforceApi() {
+export const salesforceApi = () => {
 
-	return 'test'
+	const res = 'test';
 
 	/* const res = await fetch (`${process.env.TOKEN_URL}`, {
 		method: 'POST',
@@ -28,6 +28,6 @@ export async function salesforceApi() {
 				},
 			}) */
 	/* 		}
-	);
-	return res; */ 
+	); */ 
+	return res; 
 }
