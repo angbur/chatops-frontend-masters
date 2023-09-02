@@ -31,93 +31,8 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 			return {
 				statusCode: 200,
 				body: {
-					"response_type": 'in_channel',
-					"blocks": [
-						{
-							"type": "section",
-							"text": {
-								"type": "plain_text",
-								"text": "MAMY WOLNE TERMINY [WAŻNE]",
-								"emoji": true
-							}
-						},
-						{
-							"type": "section",
-							"text": {
-								"type": "plain_text",
-								"text": "WOLNE TERMINY",
-								"emoji": true
-							}
-						},
-						{
-							"type": "section",
-							"fields": [
-								{
-									"type": "plain_text",
-									"text": "09/09/23",
-									"emoji": true
-								},
-								{
-									"type": "plain_text",
-									"text": "10/09/23",
-									"emoji": true
-								},
-								{
-									"type": "plain_text",
-									"text": "11/09/23",
-									"emoji": true
-								},
-								{
-									"type": "plain_text",
-									"text": "15/09/23",
-									"emoji": true
-								},
-								{
-									"type": "plain_text",
-									"text": "23/09/23",
-									"emoji": true
-								}
-							]
-						},
-						{
-							"type": "input",
-							"element": {
-								"type": "datepicker",
-								"initial_date": "1990-04-28",
-								"placeholder": {
-									"type": "plain_text",
-									"text": "Select a date",
-									"emoji": true
-								},
-								"action_id": "datepicker-action"
-							},
-							"label": {
-								"type": "plain_text",
-								"text": "WYBIERZ TERMIN",
-								"emoji": true
-							}
-						},
-						{
-							"type": "divider"
-						},
-						{
-							"type": "section",
-							"text": {
-								"type": "mrkdwn",
-								"text": "OD 08:00 DO 16:00   DYŻUR KOTY"
-							},
-							"accessory": {
-								"type": "button",
-								"text": {
-									"type": "plain_text",
-									"text": "ZAPISZ MNIE!",
-									"emoji": true
-								},
-								"value": "click_me_123",
-								"action_id": "button-action"
-							}
-						}
-					]
+					response_type: 'in_channel',
+					blocks: faqBlocks,
 				}
 			};
 		default:
@@ -197,3 +112,89 @@ const FAQData = [
 	return  
   }
   
+  const faqBlocks = [
+	{
+		"type": "section",
+		"text": {
+			"type": "plain_text",
+			"text": "MAMY WOLNE TERMINY [WAŻNE]",
+			"emoji": true
+		}
+	},
+	{
+		"type": "section",
+		"text": {
+			"type": "plain_text",
+			"text": "WOLNE TERMINY",
+			"emoji": true
+		}
+	},
+	{
+		"type": "section",
+		"fields": [
+			{
+				"type": "plain_text",
+				"text": "09/09/23",
+				"emoji": true
+			},
+			{
+				"type": "plain_text",
+				"text": "10/09/23",
+				"emoji": true
+			},
+			{
+				"type": "plain_text",
+				"text": "11/09/23",
+				"emoji": true
+			},
+			{
+				"type": "plain_text",
+				"text": "15/09/23",
+				"emoji": true
+			},
+			{
+				"type": "plain_text",
+				"text": "23/09/23",
+				"emoji": true
+			}
+		]
+	},
+	{
+		"type": "input",
+		"element": {
+			"type": "datepicker",
+			"initial_date": "1990-04-28",
+			"placeholder": {
+				"type": "plain_text",
+				"text": "Select a date",
+				"emoji": true
+			},
+			"action_id": "datepicker-action"
+		},
+		"label": {
+			"type": "plain_text",
+			"text": "WYBIERZ TERMIN",
+			"emoji": true
+		}
+	},
+	{
+		"type": "divider"
+	},
+	{
+		"type": "section",
+		"text": {
+			"type": "mrkdwn",
+			"text": "OD 08:00 DO 16:00   DYŻUR KOTY"
+		},
+		"accessory": {
+			"type": "button",
+			"text": {
+				"type": "plain_text",
+				"text": "ZAPISZ MNIE!",
+				"emoji": true
+			},
+			"value": "click_me_123",
+			"action_id": "button-action"
+		}
+	}
+];
