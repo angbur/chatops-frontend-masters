@@ -35,18 +35,18 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 					blocks: {
 						trigger_id: payload.trigger_id,
 						view: {
-							"type": "section",
-							"text": {
-							  "text": "*Sally* has requested you set the deadline for the Nano launch project",
-							  "type": "mrkdwn"
+							type: "section",
+							text: {
+							  text: "*Sally* has requested you set the deadline for the Nano launch project",
+							  type: "mrkdwn"
 							},
-							"accessory": {
-							  "type": "datepicker",
-							  "action_id": "datepicker123",
-							  "initial_date": "1990-04-28",
-							  "placeholder": {
-								"type": "plain_text",
-								"text": "Select a date"
+							accessory: {
+							  type: "datepicker",
+							  action_id: "datepicker123",
+							  initial_date: "1990-04-28",
+							  placeholder: {
+								type: "plain_text",
+								text: "Select a date"
 							  }
 							}
 						  }
