@@ -31,6 +31,7 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 			return {
 				statusCode: 200,
 				body: {
+					"response_type": 'in_channel',
 					"blocks": [
 						{
 							"type": "section",
