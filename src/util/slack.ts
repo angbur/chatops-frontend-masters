@@ -142,7 +142,7 @@ export function modal({
 export async function postMessageToSlack(channel: string, message: string) {
     const payload = {
         channel,
-        text: message,
+        message: message,
     };
 
     try {
