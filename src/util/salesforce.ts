@@ -16,7 +16,7 @@ export async function salesforceApi() {
 			},
 			body: new URLSearchParams(token_data),
 		}).then(data => {
-			const token = data.json().access_token;
+			const token = data.json();
 		
 			fetch('https://animalprotectionassociationekostra--ekostraz13.sandbox.my.salesforce.com/services/apexrest/Contact/0037Y00001sS1X0QAK', {
 				method: 'GET',
