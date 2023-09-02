@@ -1,5 +1,3 @@
-import { type } from "os";
-
 const token_data = {
     grant_type: 'client_credentials',
     client_id: `${process.env.CLIENT_ID}`,
