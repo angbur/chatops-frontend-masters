@@ -138,3 +138,18 @@ export function modal({
 		},
 	};
 }
+
+export async function postMessageToSlack(channel: string, message: string) {
+    const payload = {
+        channel,
+        text: message,
+    };
+
+    try {
+        const response = await slackApi('chat.postMessage', payload);
+        return response;
+    } catch (error) {
+        console.error('Error sending message to Slack:', error);
+        throw error;
+    }
+}
