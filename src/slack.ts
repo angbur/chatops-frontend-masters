@@ -106,6 +106,6 @@ const FAQData = [
 	  },
 	}));
   
-	return blocks;
+	return  blocks.section(blocks);
   }
   
