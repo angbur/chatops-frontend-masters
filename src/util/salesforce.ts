@@ -6,13 +6,15 @@ const token_data = {
 
 export async function salesforceApi() {
 
-	const res = await fetch (`${process.env.TOKEN_URL}`, {
+	return new URLSearchParams(token_data);
+
+	/* const res = await fetch (`${process.env.TOKEN_URL}`, {
 		method: 'POST',
 		headers: {
 			accept: 'application/json',
 			'content-type': 'application/x-www-form-urlencoded',
 			},
-			body: new URLSearchParams(token_data),
+		body: new URLSearchParams(token_data),
 		}).then(data => {
 			const token = data.json();
 			return token;
@@ -25,7 +27,7 @@ export async function salesforceApi() {
 					'content-type': 'application/json',
 				},
 			}) */
-			}
+	/* 		}
 	);
-	return res;
+	return res; */ 
 }
