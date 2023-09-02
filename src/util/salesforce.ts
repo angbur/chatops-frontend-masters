@@ -6,9 +6,7 @@ const token_data = {
 
 export const salesforceApi = () => {
 
-	const res = 'test';
-
-	/* const res = await fetch (`${process.env.TOKEN_URL}`, {
+	const res = fetch (`${process.env.TOKEN_URL}`, {
 		method: 'POST',
 		headers: {
 			accept: 'application/json',
@@ -27,7 +25,7 @@ export const salesforceApi = () => {
 					'content-type': 'application/json',
 				},
 			}) */
-	/* 		}
-	); */ 
+			}
+	);
 	return res; 
 }
