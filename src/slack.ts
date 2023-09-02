@@ -12,6 +12,7 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				'• `/hedgehug` - Display this help message :information_source:\n' +
 				'• `/materialyszkoleniowe` - Link to training materials :book:\n' +
 				'• `/wolnedyzury` - List available shifts :calendar:\n' +
+				'• `/faq` - Frequently Asked Questions :question:\n' +
 				'• Add more commands here... :rocket:',
 			};
 		case '/materialyszkoleniowe':
@@ -30,7 +31,7 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 		case '/faq':
 			return {
 				statusCode: 200,
-				body: 'Witaj w Hedgehug FAQ! Oto najczęściej zadawane pytania i odpowiedzi na nie:\n\n' +
+				/* body: 'Witaj w Hedgehug FAQ! Oto najczęściej zadawane pytania i odpowiedzi na nie:\n\n' +
 				'📚 *Pytanie: Jak Wygląda Interwencja?*\n' +
 				'Odpowiedź: Interwencje polegają na reagowaniu na sytuacje zagrożenia dla zwierząt, takie jak przypadki znęcania się czy wypadki drogowe. Wolontariusze dostają specjalne szkolenie, które pomaga im działać w takich sytuacjach. Interwencje mogą być emocjonalnie trudne, ale nasza wspólna praca przynosi zwierzętom pomoc i nadzieję. :animal_rescue:\n\n' +
 				'🚀 *Pytanie: Jak Się Przygotować do Interwencji?*\n' +
@@ -39,7 +40,18 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				'Odpowiedź: Sytuacje interwencyjne mogą być różnorodne i nieprzewidywalne. Możemy napotkać na zwierzęta w stanie krytycznym, konieczność działań ratunkowych, a także sytuacje wymagające interakcji z innymi ludźmi. Nasze doświadczenie i szkolenie pomaga nam efektywnie radzić sobie w różnych sytuacjach. :warning:\n\n' +
 				'🤔 *Pytanie: Czy Wolontariat Jest Trudny?*\n' +
 				'Odpowiedź: Wolontariat w organizacji Hedgehug może być emocjonalnie trudny ze względu na trudne sytuacje, z jakimi stykamy się podczas interwencji. Jednak nasza wspólna praca przynosi ogromną satysfakcję i pomaga zwierzętom, co jest naszą najważniejszą motywacją. :heart:'
-		  
+		   */
+		   body: {
+			"blocks": [
+				{
+					"type": "section",
+					"text": {
+						"type": "mrkdwn",
+						"text": "New Paid Time Off request from <example.com|Fred Enriquez>\n\n<https://example.com|View request>"
+					}
+				}
+			]
+		}
 			}
 		default:
 			return {
