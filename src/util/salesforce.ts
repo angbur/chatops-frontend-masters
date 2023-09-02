@@ -9,7 +9,7 @@ export async function salesforceApi() {
 		method: 'GET',
 		headers: {
 			accept: 'application/json',
-			authorization: `Bearer ${process.env.CLIENT_SECRET}`,
+			authorization: `Bearer ${process.env.TOKEN_URL}`,
 			'content-type': 'application/json',
 		},
 		body: new URLSearchParams(token_data),
