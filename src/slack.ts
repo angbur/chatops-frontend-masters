@@ -30,16 +30,7 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 		case '/faq':
 			const response = await slackApi(
 				'views.open',
-				modal({
-					id: 'foodfight-modal',
-					title: 'Start a food fight!',
-					trigger_id: payload.trigger_id,
-					blocks: [
-						blocks.section({
-							text: 'The discourse demands food drama! *Send in your spiciest food takes so we can all argue about them and feel alive.*',
-						}),
-					],
-				}),
+				'Yeah'
 			);
 			if (!response.ok) {
 				console.log(response);
