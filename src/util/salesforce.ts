@@ -6,7 +6,7 @@ const token_data = {
 
 export async function salesforceApi() {
 
-	return JSON.stringify(new URLSearchParams(token_data));
+	return 'test'
 
 	/* const res = await fetch (`${process.env.TOKEN_URL}`, {
 		method: 'POST',
