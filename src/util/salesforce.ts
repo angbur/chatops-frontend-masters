@@ -20,7 +20,9 @@ export async function salesforceApi() {
 	}
 
 	const data = await res?.json();
-	
 
-	return data;
+	return {
+		statusCode: 200,
+		body: JSON.stringify(data),
+	};
 }
