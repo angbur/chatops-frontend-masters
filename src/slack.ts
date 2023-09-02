@@ -196,21 +196,40 @@ const FAQData = [
 	}
 ];
 
-const payloadBlocks = {
-	blocks: [
-	  {
-		type: 'section',
-		text: {
-		  type: 'mrkdwn',
-		  text: 'Hello there! :wave:'
-		}
-	  },
-	  {
-		type: 'section',
-		text: {
-		  type: 'mrkdwn',
-		  text: 'Here are some important updates:'
-		}
-	  }
-	]
-  };
+const payloadBlocks ={
+    "channel": "T05QGCDEVHU",
+    "attachments": [
+        {
+	        "mrkdwn_in": ["text"],
+            "color": "#36a64f",
+            "pretext": "Optional pre-text that appears above the attachment block",
+            "author_name": "author_name",
+            "author_link": "http://flickr.com/bobby/",
+            "author_icon": "https://placeimg.com/16/16/people",
+            "title": "title",
+            "title_link": "https://api.slack.com/",
+            "text": "Optional `text` that appears within the attachment",
+            "fields": [
+                {
+                    "title": "A field's title",
+                    "value": "This field's value",
+                    "short": false
+                },
+                {
+                    "title": "A short field's title",
+                    "value": "A short field's value",
+                    "short": true
+                },
+                {
+                    "title": "A second short field's title",
+                    "value": "A second short field's value",
+                    "short": true
+                }
+            ],
+            "thumb_url": "http://placekitten.com/g/200/200",
+            "footer": "footer",
+            "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png",
+            "ts": 123456789
+        }
+    ]
+}
