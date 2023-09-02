@@ -17,15 +17,16 @@ export async function salesforceApi() {
 			body: new URLSearchParams(token_data),
 		}).then(data => {
 			const token = data.json();
+			return token;
 		
-			fetch('https://animalprotectionassociationekostra--ekostraz13.sandbox.my.salesforce.com/services/apexrest/Contact/0037Y00001sS1X0QAK', {
+			/* fetch('https://animalprotectionassociationekostra--ekostraz13.sandbox.my.salesforce.com/services/apexrest/Contact/0037Y00001sS1X0QAK', {
 				method: 'GET',
 				headers: {
 					accept: 'application/json',
 					authorization: `Bearer ${token}`,
 					'content-type': 'application/json',
 				},
-			})
+			}) */
 			}
 	);
 	return res;
