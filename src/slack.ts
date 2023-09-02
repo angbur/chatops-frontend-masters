@@ -8,6 +8,7 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 			'*Available Commands:*\n' +
 			'• `/hedgehug` - Display this help message :information_source:\n' +
 			'• `/materialyszkoleniowe` - Link to training materials :book:\n' +
+			'• `/wolnedyzury` - List available shifts :calendar:\n' +
 			'• Add more commands here... :rocket:',
 		};
 	  case '/materialyszkoleniowe':
@@ -17,27 +18,6 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 		  body: 'Materiały szkoleniowe znajdziesz tutaj: https://drive.google.com/file/d/1DVcaqBiqbGn25pcpyAOcBzji2T07ALfv/view?usp=drive_link'
 		};
 	  case '/wolnedyzury':
-		// Generate a list of available shifts and buttons
-		const shifts = [
-		  { date: '2023-09-01', shift: 'Morning Shift' },
-		  { date: '2023-09-02', shift: 'Evening Shift' },
-		  // Add more shifts here...
-		];
-  
-		const attachmentButtons = shifts.map(shift => ({
-		  text: `Assign to ${shift.date}`,
-		  type: 'button',
-		  action_id: `assign_shift_${shift.date}`, // Unique action ID for each button
-		}));
-  
-		const attachment = {
-		  text: 'Available Shifts for September 2023:',
-		  fallback: 'No available shifts.',
-		  callback_id: 'assign_shifts',
-		  color: '#36a64f', // Green color
-		  attachment_type: 'default',
-		  actions: attachmentButtons,
-		};
   
 		return {
 		  statusCode: 200,
@@ -53,4 +33,26 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 		};
 	}
   }
+
+  const shifts = [
+	{ date: '2023-09-01', shift: 'Morning Shift' },
+	{ date: '2023-09-02', shift: 'Evening Shift' },
+	{ date: '2023-09-03', shift: 'Morning Shift' },
+	{ date: '2023-09-04', shift: 'Evening Shift' }
+  ];
+
+  const attachmentButtons = shifts.map(shift => ({
+	text: `Assign to ${shift.date}`,
+	type: 'button',
+	action_id: `assign_shift_${shift.date}`,
+  }));
+
+  const attachment = {
+	text: 'Available Shifts for September 2023:',
+	fallback: 'No available shifts.',
+	callback_id: 'assign_shifts',
+	color: '#36a64f', // Green color
+	attachment_type: 'default',
+	actions: attachmentButtons,
+  };
   
