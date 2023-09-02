@@ -29,8 +29,8 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				}),
 			};
 		case '/faq':
-			return {
-				statusCode: 200,
+			//return {
+				//statusCode: 200,
 				/* body: 'Witaj w Hedgehug FAQ! Oto najczęściej zadawane pytania i odpowiedzi na nie:\n\n' +
 				'📚 *Pytanie: Jak Wygląda Interwencja?*\n' +
 				'Odpowiedź: Interwencje polegają na reagowaniu na sytuacje zagrożenia dla zwierząt, takie jak przypadki znęcania się czy wypadki drogowe. Wolontariusze dostają specjalne szkolenie, które pomaga im działać w takich sytuacjach. Interwencje mogą być emocjonalnie trudne, ale nasza wspólna praca przynosi zwierzętom pomoc i nadzieję. :animal_rescue:\n\n' +
@@ -41,18 +41,30 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				'🤔 *Pytanie: Czy Wolontariat Jest Trudny?*\n' +
 				'Odpowiedź: Wolontariat w organizacji Hedgehug może być emocjonalnie trudny ze względu na trudne sytuacje, z jakimi stykamy się podczas interwencji. Jednak nasza wspólna praca przynosi ogromną satysfakcję i pomaga zwierzętom, co jest naszą najważniejszą motywacją. :heart:'
 		   */
-		   body: JSON.stringify({
-			blocks: [
-				{
-					type: "section",
-					text: {
-						type: "mrkdwn",
-						text: "New Paid Time Off request from <example.com|Fred Enriquez>\n\n<https://example.com|View request>"
-					}
-				}
-			]
-			})
-			}
+		  
+			//}
+			const response = await slackApi('chat.postMessage', {
+				channel: payload.channel_id,
+				text: 'Witaj w Hedgehug FAQ! Oto najczęściej zadawane pytania i odpowiedzi na nie:',
+				blocks: [
+					blocks.section({
+						text: '📚 *Pytanie: Jak Wygląda Interwencja?*\n' +
+						'Odpowiedź: Interwencje polegają na reagowaniu na sytuacje zagrożenia dla zwierząt, takie jak przypadki znęcania się czy wypadki drogowe. Wolontariusze dostają specjalne szkolenie, które pomaga im działać w takich sytuacjach. Interwencje mogą być emocjonalnie trudne, ale nasza wspólna praca przynosi zwierzętom pomoc i nadzieję. :animal_rescue:'
+					}),
+					blocks.section({
+						text: '🚀 *Pytanie: Jak Się Przygotować do Interwencji?*\n' +
+						'Odpowiedź: Przygotowanie obejmuje zapoznanie się z podstawowymi zasadami interwencji, dostępem do odpowiedniego sprzętu, oraz zdobywaniem doświadczenia podczas dyżurów przy zwierzętach. Nasz zespół zawsze wspiera nowych wolontariuszy i pomaga w przygotowaniu do interwencji. :gear:'
+					}),
+					blocks.section({
+						text: '🌟 *Pytanie: Co Może Nas Zastać na Miejscu Interwencji?*\n'
+					})
+				],
+			});
+			return {
+				statusCode: 200,
+				body: JSON.stringify(response),
+			};
+
 		default:
 			return {
 				statusCode: 200,
