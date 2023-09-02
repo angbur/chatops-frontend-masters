@@ -4,7 +4,6 @@ import { parse } from 'querystring';
 import { blocks, modal, slackApi, verifySlackRequest } from './util/slack';
 import { saveItem } from './util/salesforce';
 import { fetchApiGET } from './util/test';
-
 async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 	switch (payload.command) {
 		case '/hedgehug':
@@ -75,7 +74,7 @@ async function handleInteractivity(payload: SlackModalPayload) {
 	};
 }
 
-export const handler: Handler = async (event) => {
+export const handler = async (event: any) => {
 	const valid = verifySlackRequest(event);
 
 	/* if (!valid) {
@@ -87,6 +86,7 @@ export const handler: Handler = async (event) => {
 		};
 	}
  */
+
 	const body = parse(event.body ?? '') as SlackPayload;
 
 	if (body.command) {
