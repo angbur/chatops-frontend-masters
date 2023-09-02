@@ -12,7 +12,7 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				body: 'Witaj w Hedgehug! Aby rozpocząć wybierz opcję z menu poniżej.',
 			};
 
-		case '/materialyszkoleniowe':
+		case '/hedgehug-materialyszkoleniowe':
 			return {
 				statusCode: 200,
 				body: 'Materiały szkoleniowe znajdziesz tutaj: https://drive.google.com/file/d/1DVcaqBiqbGn25pcpyAOcBzji2T07ALfv/view?usp=drive_link'
