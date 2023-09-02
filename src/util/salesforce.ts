@@ -1,13 +1,18 @@
-export async function notionApi(endpoint: string, body: {}) {
-	const res = await fetch(`https://api.notion.com/v1${endpoint}`, {
+const token_data = {
+    grant_type: 'client_credentials',
+    client_id: `${process.env.CLIENT_ID}`,
+    client_secret: `${process.env.CLIENT_SECRET}`
+};
+
+export async function salesforceApi(endpoint: string, body: {}) {
+	const res = await fetch(`${process.env.TOKEN_URL}`, {
 		method: 'POST',
 		headers: {
 			accept: 'application/json',
-			authorization: `Bearer ${process.env.NOTION_SECRET}`,
-			'Notion-Version': '2022-06-28',
+			authorization: `Bearer ${process.env.CLIENT_SECRET}`,
 			'content-type': 'application/json',
 		},
-		body: JSON.stringify(body),
+		body: new URLSearchParams(token_data),
 	}).catch((err) => console.error(err));
 
 	if (!res || !res.ok) {
@@ -20,7 +25,7 @@ export async function notionApi(endpoint: string, body: {}) {
 }
 
 export async function getNewItems(): Promise<NewItem[]> {
-	const notionData = await notionApi(
+	const notionData = await salesforceApi(
 		`/databases/${process.env.NOTION_DATABASE_ID}/query`,
 		{
 			filter: {
