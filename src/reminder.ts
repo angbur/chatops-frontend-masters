@@ -1,8 +1,7 @@
 import { type Handler, schedule } from '@netlify/functions';
-import { getNewItems } from './util/salesforce';
 import { blocks, slackApi } from './util/slack';
 
-const postNewNotionItemsToSlack: Handler = async () => {
+/* const postNewNotionItemsToSlack: Handler = async () => {
 	const items = await getNewItems();
 
 	await slackApi('chat.postMessage', {
@@ -25,7 +24,7 @@ const postNewNotionItemsToSlack: Handler = async () => {
 	return {
 		statusCode: 200,
 	};
-};
+}; */
 
 // see https://crontab.guru for more info on how this syntax works
-export const handler = schedule('0 12 * * 1', postNewNotionItemsToSlack);
+//export const handler = schedule('0 12 * * 1', postNewNotionItemsToSlack);
