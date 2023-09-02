@@ -28,8 +28,6 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 	}
 }
 
-
-
 export const handler: Handler = async (event) => {
 	const valid = verifySlackRequest(event);
 
@@ -42,6 +40,7 @@ export const handler: Handler = async (event) => {
 		};
 	}
  */
+
 	const body = parse(event.body ?? '') as SlackPayload;
 
 	if (body.command) {
