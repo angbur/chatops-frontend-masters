@@ -42,12 +42,12 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				'Odpowiedź: Wolontariat w organizacji Hedgehug może być emocjonalnie trudny ze względu na trudne sytuacje, z jakimi stykamy się podczas interwencji. Jednak nasza wspólna praca przynosi ogromną satysfakcję i pomaga zwierzętom, co jest naszą najważniejszą motywacją. :heart:'
 		   */
 		   body: JSON.stringify({
-			"blocks": [
+			blocks: [
 				{
-					"type": "section",
-					"text": {
-						"type": "mrkdwn",
-						"text": "New Paid Time Off request from <example.com|Fred Enriquez>\n\n<https://example.com|View request>"
+					type: "section",
+					text: {
+						type: "mrkdwn",
+						text: "New Paid Time Off request from <example.com|Fred Enriquez>\n\n<https://example.com|View request>"
 					}
 				}
 			]
