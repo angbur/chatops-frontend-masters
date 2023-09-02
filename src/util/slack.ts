@@ -10,7 +10,9 @@ export function slackApi(
 		method: 'POST',
 		headers: {
 			Authorization: `Bearer ${process.env.SLACK_BOT_OAUTH_TOKEN}`,
-			'Content-Type': 'application/json; charset=utf-8',
+			'Content-Type': 'application/json',
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
 		},
 		body: JSON.stringify(body),
 	}).then((res) => res.json());
