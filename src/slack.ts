@@ -30,7 +30,16 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 		case '/faq':
 			return {
 				statusCode: 200,
-				body: JSON.stringify(payloadBlocks)
+				body: 'Witaj w Hedgehug FAQ! Oto najczęściej zadawane pytania i odpowiedzi na nie:\n\n' +
+				'📚 *Pytanie: Jak Wygląda Interwencja?*\n' +
+				'Odpowiedź: Interwencje polegają na reagowaniu na sytuacje zagrożenia dla zwierząt, takie jak przypadki znęcania się czy wypadki drogowe. Wolontariusze dostają specjalne szkolenie, które pomaga im działać w takich sytuacjach. Interwencje mogą być emocjonalnie trudne, ale nasza wspólna praca przynosi zwierzętom pomoc i nadzieję. :animal_rescue:\n\n' +
+				'🚀 *Pytanie: Jak Się Przygotować do Interwencji?*\n' +
+				'Odpowiedź: Przygotowanie obejmuje zapoznanie się z podstawowymi zasadami interwencji, dostępem do odpowiedniego sprzętu, oraz zdobywaniem doświadczenia podczas dyżurów przy zwierzętach. Nasz zespół zawsze wspiera nowych wolontariuszy i pomaga w przygotowaniu do interwencji. :gear:\n\n' +
+				'🌟 *Pytanie: Co Może Nas Zastać na Miejscu Interwencji?*\n' +
+				'Odpowiedź: Sytuacje interwencyjne mogą być różnorodne i nieprzewidywalne. Możemy napotkać na zwierzęta w stanie krytycznym, konieczność działań ratunkowych, a także sytuacje wymagające interakcji z innymi ludźmi. Nasze doświadczenie i szkolenie pomaga nam efektywnie radzić sobie w różnych sytuacjach. :warning:\n\n' +
+				'🤔 *Pytanie: Czy Wolontariat Jest Trudny?*\n' +
+				'Odpowiedź: Wolontariat w organizacji Hedgehug może być emocjonalnie trudny ze względu na trudne sytuacje, z jakimi stykamy się podczas interwencji. Jednak nasza wspólna praca przynosi ogromną satysfakcję i pomaga zwierzętom, co jest naszą najważniejszą motywacją. :heart:'
+		  
 			}
 		default:
 			return {
@@ -69,24 +78,18 @@ export const handler: Handler = async (event) => {
 };
 
 
-const FAQData = [
-	{
-	  question: 'Jak Wygląda Interwencja?',
-	  answer: 'Interwencje polegają na reagowaniu na sytuacje zagrożenia dla zwierząt, takie jak przypadki znęcania się czy wypadki drogowe. Wolontariusze dostają specjalne szkolenie, które pomaga im działać w takich sytuacjach. Interwencje mogą być emocjonalnie trudne, ale nasza wspólna praca przynosi zwierzętom pomoc i nadzieję.',
-	},
-	{
-	  question: 'Jak Się Przygotować do Interwencji?',
-	  answer: 'Przygotowanie obejmuje zapoznanie się z podstawowymi zasadami interwencji, dostępem do odpowiedniego sprzętu, oraz zdobywaniem doświadczenia podczas dyżurów przy zwierzętach. Nasz zespół zawsze wspiera nowych wolontariuszy i pomaga w przygotowaniu do interwencji.'
-	},
-	{
-	  question: 'Co Może Nas Zastać na Miejscu Interwencji?',
-	  answer: 'Sytuacje interwencyjne mogą być różnorodne i nieprzewidywalne. Możemy napotkać na zwierzęta w stanie krytycznym, konieczność działań ratunkowych, a także sytuacje wymagające interakcji z innymi ludźmi. Nasze doświadczenie i szkolenie pomaga nam efektywnie radzić sobie w różnych sytuacjach.'
-	},
-	{
-	  question: 'Czy Wolontariat Jest Trudny?',
-	  answer: 'Wolontariat w organizacji Ekostraż może być emocjonalnie trudny ze względu na trudne sytuacje, z jakimi stykamy się podczas interwencji. Jednak nasza wspólna praca przynosi ogromną satysfakcję i pomaga zwierzętom, co jest naszą najważniejszą motywacją.'
-	}
-  ];
+const FAQData = '**Q: Jak Wygląda Interwencja?**
+A: Interwencje polegają na reagowaniu na sytuacje zagrożenia dla zwierząt, takie jak przypadki znęcania się czy wypadki drogowe. Wolontariusze dostają specjalne szkolenie, które pomaga im działać w takich sytuacjach. Interwencje mogą być emocjonalnie trudne, ale nasza wspólna praca przynosi zwierzętom pomoc i nadzieję.
+
+**Q: Jak Się Przygotować do Interwencji?**
+A: Przygotowanie obejmuje zapoznanie się z podstawowymi zasadami interwencji, dostępem do odpowiedniego sprzętu, oraz zdobywaniem doświadczenia podczas dyżurów przy zwierzętach. Nasz zespół zawsze wspiera nowych wolontariuszy i pomaga w przygotowaniu do interwencji.
+
+**Q: Co Może Nas Zastać na Miejscu Interwencji?**
+A: Sytuacje interwencyjne mogą być różnorodne i nieprzewidywalne. Możemy napotkać na zwierzęta w stanie krytycznym, konieczność działań ratunkowych, a także sytuacje wymagające interakcji z innymi ludźmi. Nasze doświadczenie i szkolenie pomaga nam efektywnie radzić sobie w różnych sytuacjach.
+
+**Q: Czy Wolontariat Jest Trudny?**
+A: Wolontariat w organizacji Ekostraż może być emocjonalnie trudny ze względu na trudne sytuacje, z jakimi stykamy się podczas interwencji. Jednak nasza wspólna praca przynosi ogromną satysfakcję i pomaga zwierzętom, co jest naszą najważniejszą motywacją.
+';
 
   function generateFAQMessage() {
 	const blocks = FAQData.map((item, index) => ({
