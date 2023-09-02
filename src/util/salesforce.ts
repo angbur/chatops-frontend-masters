@@ -6,14 +6,21 @@ const token_data = {
 
 export const salesforceApi = () => {
 
-	const res = fetch (`${process.env.TOKEN_URL}`, {
-		method: 'POST',
-		headers: {
-			'content-type': 'application/json',
-			'Access-Control-Allow-Origin': '*',
-			'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-			},
-		body: new URLSearchParams(token_data),
-		}).then((res) => res.json());
-	return res; 
+	try {
+		const response = fetch(`${process.env.TOKEN_URL}`, {
+			method: 'POST',
+			body: JSON.stringify(token_data),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+		.then(response => response.json())
+		.then(data => {
+			return data;
+		});
+		return response;
+	} catch (error) {
+		console.error(error);
+
+	}
 }
