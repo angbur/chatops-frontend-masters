@@ -6,7 +6,7 @@ const token_data = {
 
 export async function salesforceApi() {
 	const res = await fetch(`${process.env.TOKEN_URL}`, {
-		method: 'POST',
+		method: 'GET',
 		headers: {
 			accept: 'application/json',
 			authorization: `Bearer ${process.env.CLIENT_SECRET}`,
