@@ -1,7 +1,5 @@
 <img src="src/assets/img/troll128.png" width="64"/>
 
-# Troll Images Hunter - an extension simplifying the fact-checking process
-
 Made by **SQUADCXTREME**:
 
 - [Agnieszka Bury](https://github.com/angbury)
@@ -50,19 +48,4 @@ Make your spiciest assertions and watch your team devolve into culinary fisticuf
 
 ### Notion
 
-Notion is used to store data from the Slack application. You'll need to create a free Notion account:
-
-1. Visit https://notion.com
-2. Create a new account if you don't already have one.
-3. [optional] Create a new workspace
-4. Duplicate [the example database](https://frontendmasters-chatops.notion.site/7818ece038cc43129307fd41e91fd9c8)
-
-A new integration is created during the **Integration with Notion** lesson:
-
-1. Visit https://www.notion.so/my-integrations
-2. Click the New Integration button
-3. Select the workspace you want to use for the application
-4. Add the basic information and an image from the `assets` directory.
-5. Visit the Food Fight Database you duplicated into your workspace and add the Food Fight connection.
-6. From the integrations section, copy the secret into a `NOTION_SECRET` environment variable
-7. Copy the database ID into a `NOTION_DATABASE_ID` environment variable
+Integration with a custom endpoint in Salesforce.
