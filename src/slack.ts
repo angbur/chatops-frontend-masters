@@ -23,7 +23,7 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 		case '/wolnedyzury':
 			return {
 				statusCode: 200,
-				body: 'Here are the available shifts for September 2023\n\n' +
+				body: 'Dostępne dyżury w przyszłym miesiącu:\n' +
 				'• 09/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n' +
 				'• 10/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n' +
 				'• 11/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n' +
