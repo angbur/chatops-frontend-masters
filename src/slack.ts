@@ -48,19 +48,7 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 			case '/wtf':
 				return {
 				  statusCode: 200,
-				  body: JSON.stringify({
-					blocks: [
-					  {
-						type: 'image',
-						title: {
-						  type: 'plain_text',
-						  text: 'Image Title',
-						},
-						image_url: imageUrl,
-						alt_text: 'Image Alt Text',
-					  },
-					],
-				  }),
+				  body: imageUrl
 				};
 		default:
 			return {
