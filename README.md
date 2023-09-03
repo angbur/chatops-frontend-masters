@@ -1,8 +1,10 @@
-[![Frontend Masters](https://static.frontendmasters.com/assets/brand/logos/full.png)](https://frontendmasters.com)
+<img src="src/assets/img/troll128.png" width="64"/>
 
-This is a companion repo for the [Building a Slack Chat Bot with Jason Lengstorf](https://frontendmasters.com/courses/chat-apis/) course on [Frontend Masters](https://frontendmasters.com).
+# Troll Images Hunter - an extension simplifying the fact-checking process
 
-The `main` branch contains the final application. Use the `start` branch when following the course.
+Made by **SQUADCXTREME**:
+
+- [Agnieszka Bury](https://github.com/angbury)
 
 ## Setup Instructions
 
