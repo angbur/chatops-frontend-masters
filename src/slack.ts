@@ -45,6 +45,23 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				'🤔 *Pytanie: Czy Wolontariat Jest Trudny?*\n' +
 				'Odpowiedź: Wolontariat w organizacji Hedgehug może być emocjonalnie trudny ze względu na trudne sytuacje, z jakimi stykamy się podczas interwencji. Jednak nasza wspólna praca przynosi ogromną satysfakcję i pomaga zwierzętom, co jest naszą najważniejszą motywacją. :heart:'
 			};
+		
+			return {
+			  statusCode: 200,
+			  body: JSON.stringify({
+				blocks: [
+				  {
+					type: 'image',
+					title: {
+					  type: 'plain_text',
+					  text: 'Image Title',
+					},
+					image_url: imageUrl,
+					alt_text: 'Image Alt Text',
+				  },
+				],
+			  }),
+			};
 		default:
 			return {
 				statusCode: 200,
@@ -80,3 +97,5 @@ export const handler: Handler = async (event) => {
 		body: 'TODO: handle Slack commands and interactivity',
 	};
 };
+
+const imageUrl = 'https://sqadcxtreme.slack.com/files/U05QP1MT40K/F05R4C4KJKB/image.png';
