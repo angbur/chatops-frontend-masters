@@ -45,23 +45,23 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				'🤔 *Pytanie: Czy Wolontariat Jest Trudny?*\n' +
 				'Odpowiedź: Wolontariat w organizacji Hedgehug może być emocjonalnie trudny ze względu na trudne sytuacje, z jakimi stykamy się podczas interwencji. Jednak nasza wspólna praca przynosi ogromną satysfakcję i pomaga zwierzętom, co jest naszą najważniejszą motywacją. :heart:'
 			};
-		
-			return {
-			  statusCode: 200,
-			  body: JSON.stringify({
-				blocks: [
-				  {
-					type: 'image',
-					title: {
-					  type: 'plain_text',
-					  text: 'Image Title',
-					},
-					image_url: imageUrl,
-					alt_text: 'Image Alt Text',
-				  },
-				],
-			  }),
-			};
+			case '/wtf':
+				return {
+				  statusCode: 200,
+				  body: JSON.stringify({
+					blocks: [
+					  {
+						type: 'image',
+						title: {
+						  type: 'plain_text',
+						  text: 'Image Title',
+						},
+						image_url: imageUrl,
+						alt_text: 'Image Alt Text',
+					  },
+					],
+				  }),
+				};
 		default:
 			return {
 				statusCode: 200,
