@@ -23,16 +23,14 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 		case '/wolnedyzury':
 			return {
 				statusCode: 200,
-				body: JSON.stringify({
-				text: 'Here are the available shifts for September 2023\nn' +
+				body: 'Here are the available shifts for September 2023\nn' +
 				'• 09/09/23 - 08:00-16:00 - DYŻUR KOTY\n' +
 				'• 10/09/23 - 08:00-16:00 - DYŻUR KOTY\n' +
 				'• 11/09/23 - 08:00-16:00 - DYŻUR KOTY\n' +
 				'• 15/09/23 - 08:00-16:00 - DYŻUR KOTY\n' +
 				'• 23/09/23 - 08:00-16:00 - DYŻUR KOTY\n' +
 				'• 24/09/23 - 08:00-16:00 - DYŻUR KOTY\n' +
-				'• 25/09/23 - 08:00-16:00 - DYŻUR KOTY\n',
-				}),
+				'• 25/09/23 - 08:00-16:00 - DYŻUR KOTY\n'
 			};
 		case '/faq':
 			return {
