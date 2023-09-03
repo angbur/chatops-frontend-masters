@@ -7,13 +7,12 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 		case '/hedgehug':
 			return {
 				statusCode: 200,
-				body: 'Witaj w Hedgehug! Aby rozpocząć, wybierz opcję z menu poniżej.\n\n' +
-				'*Available Commands:*\n' +
-				'• `/hedgehug` - Display this help message :information_source:\n' +
-				'• `/materialyszkoleniowe` - Link to training materials :book:\n' +
-				'• `/wolnedyzury` - List available shifts :calendar:\n' +
-				'• `/faq` - Frequently Asked Questions :question:\n' +
-				'• Add more commands here... :rocket:',
+				body: '*Dostępne Komendy:*\n' +
+				'• `/hedgehug` - Wyświetl tę wiadomość pomocy :information_source:\n' +
+				'• `/materialyszkoleniowe` - Link do materiałów szkoleniowych :book:\n' +
+				'• `/wolnedyzury` - Lista dostępnych dyżurów :calendar:\n' +
+				'• `/faq` - Najczęściej Zadawane Pytania :question:\n' +
+				'• `/wtf` - niespodzianka ... :rocket:'				
 			};
 		case '/materialyszkoleniowe':
 			return {
@@ -49,7 +48,7 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				return {
 				  statusCode: 200,
 				  body: imageUrl
-				};
+			};
 		default:
 			return {
 				statusCode: 200,
