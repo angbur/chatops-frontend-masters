@@ -22,15 +22,47 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 		case '/wolnedyzury':
 			return {
 				statusCode: 200,
-				body: 'Dostępne dyżury w przyszłym miesiącu:\n' +
-				'• 09/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n' +
-				'• 10/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n' +
-				'• 11/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n' +
-				'• 15/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n' +
-				'• 23/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n' +
-				'• 24/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n' +
-				'• 25/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n'
-			};
+				body: JSON.stringify({
+				  blocks: [
+					{
+					  type: 'section',
+					  text: {
+						type: 'mrkdwn',
+						text: 'Dostępne dyżury w przyszłym miesiącu:',
+					  },
+					},
+					{
+					  type: 'section',
+					  block_id: 'shifts', // You can provide a unique block ID here
+					  fields: [
+						{
+						  type: 'mrkdwn',
+						  text: '• 09/09/23 - 08:00-16:00 - DYŻUR KOTY :star:',
+						},
+						{
+						  type: 'mrkdwn',
+						  text: '• 10/09/23 - 08:00-16:00 - DYŻUR KOTY :star:',
+						},
+						// Add more shift entries here...
+					  ],
+					},
+					{
+					  type: 'actions',
+					  elements: [
+						{
+						  type: 'button',
+						  action_id: 'signup_button', // You can provide a unique action ID here
+						  text: {
+							type: 'plain_text',
+							text: 'Zapisuję się',
+						  },
+						  style: 'primary',
+						},
+					  ],
+					},
+				  ],
+				}),
+			  };
 		case '/faq':
 			return {
 				statusCode: 200,
