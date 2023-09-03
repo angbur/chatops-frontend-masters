@@ -7,7 +7,7 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 		case '/hedgehug':
 			return {
 				statusCode: 200,
-				body: 'Witaj w Hedgehug! Aby rozpocząć wybierz opcję z menu poniżej.\n\n' +
+				body: 'Witaj w Hedgehug! Aby rozpocząć, wybierz opcję z menu poniżej.\n\n' +
 				'*Available Commands:*\n' +
 				'• `/hedgehug` - Display this help message :information_source:\n' +
 				'• `/materialyszkoleniowe` - Link to training materials :book:\n' +
@@ -23,14 +23,14 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 		case '/wolnedyzury':
 			return {
 				statusCode: 200,
-				body: 'Here are the available shifts for September 2023\nn' +
-				'• 09/09/23 - 08:00-16:00 - DYŻUR KOTY\n' +
-				'• 10/09/23 - 08:00-16:00 - DYŻUR KOTY\n' +
-				'• 11/09/23 - 08:00-16:00 - DYŻUR KOTY\n' +
-				'• 15/09/23 - 08:00-16:00 - DYŻUR KOTY\n' +
-				'• 23/09/23 - 08:00-16:00 - DYŻUR KOTY\n' +
-				'• 24/09/23 - 08:00-16:00 - DYŻUR KOTY\n' +
-				'• 25/09/23 - 08:00-16:00 - DYŻUR KOTY\n'
+				body: 'Here are the available shifts for September 2023\n\n' +
+				'• 09/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n' +
+				'• 10/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n' +
+				'• 11/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n' +
+				'• 15/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n' +
+				'• 23/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n' +
+				'• 24/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n' +
+				'• 25/09/23 - 08:00-16:00 - DYŻUR KOTY :star:\n'
 			};
 		case '/faq':
 			return {
@@ -39,12 +39,12 @@ async function handleSlashCommand(payload: SlackSlashCommandPayload) {
 				'📚 *Pytanie: Jak Wygląda Interwencja?*\n' +
 				'Odpowiedź: Interwencje polegają na reagowaniu na sytuacje zagrożenia dla zwierząt, takie jak przypadki znęcania się czy wypadki drogowe. Wolontariusze dostają specjalne szkolenie, które pomaga im działać w takich sytuacjach. Interwencje mogą być emocjonalnie trudne, ale nasza wspólna praca przynosi zwierzętom pomoc i nadzieję. :animal_rescue:\n\n' +
 				'🚀 *Pytanie: Jak Się Przygotować do Interwencji?*\n' +
-				'Odpowiedź: Przygotowanie obejmuje zapoznanie się z podstawowymi zasadami interwencji, dostępem do odpowiedniego sprzętu, oraz zdobywaniem doświadczenia podczas dyżurów przy zwierzętach. Nasz zespół zawsze wspiera nowych wolontariuszy i pomaga w przygotowaniu do interwencji. :gear:\n\n' +
+				'Odpowiedź: Przygotowanie obejmuje zapoznanie się z podstawowymi zasadami interwencji, dostępem do odpowiedniego sprzętu oraz zdobywanie doświadczenia podczas dyżurów przy zwierzętach. Nasz zespół zawsze wspiera nowych wolontariuszy i pomaga w przygotowaniu do interwencji. :gear:\n\n' +
 				'🌟 *Pytanie: Co Może Nas Zastać na Miejscu Interwencji?*\n' +
 				'Odpowiedź: Sytuacje interwencyjne mogą być różnorodne i nieprzewidywalne. Możemy napotkać na zwierzęta w stanie krytycznym, konieczność działań ratunkowych, a także sytuacje wymagające interakcji z innymi ludźmi. Nasze doświadczenie i szkolenie pomaga nam efektywnie radzić sobie w różnych sytuacjach. :warning:\n\n' +
 				'🤔 *Pytanie: Czy Wolontariat Jest Trudny?*\n' +
 				'Odpowiedź: Wolontariat w organizacji Hedgehug może być emocjonalnie trudny ze względu na trudne sytuacje, z jakimi stykamy się podczas interwencji. Jednak nasza wspólna praca przynosi ogromną satysfakcję i pomaga zwierzętom, co jest naszą najważniejszą motywacją. :heart:'
-			}
+			};
 		default:
 			return {
 				statusCode: 200,
