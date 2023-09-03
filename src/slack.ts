@@ -169,8 +169,8 @@ export const handler: Handler = async (event) => {
 	}
 ];
 
-const payloadBlocks ={
-		"type": "home",
+const payloadBlocks = {
+		"type": "general",
 		"blocks": [
 			{
 				"type": "section",
